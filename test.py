@@ -12,7 +12,7 @@ from tqdm import tqdm
 import torch
 from torch.utils.data.dataloader import DataLoader
 
-from model.base import base_model
+from model.base import base_model, st_model
 from dataset.normal_dataset import SVHNDataset, test_transform
 
 import config
@@ -35,6 +35,8 @@ def run(arg):
 
     if arg.net == "base_model":
         model = base_model()
+    elif arg.net == "st_model":
+        model = st_model()
 
     model.load_state_dict(torch.load(os.path.join(config.checkpoint_path, arg.dataset_name + "_" + arg.net +
                                                   "_" + arg.checkpoint + '.pth')))
