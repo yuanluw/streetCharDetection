@@ -1,0 +1,7 @@
+!.gitignore
+*.pyc
+*.pth
+pre_train/
+*.csv
+*.txt
+.idea/
